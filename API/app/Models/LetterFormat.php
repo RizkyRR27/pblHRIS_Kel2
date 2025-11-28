@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 class LetterFormat extends Model
 {
     protected $table = 'letter_formats';
+<<<<<<< HEAD
     protected $keyType = 'string';
     public $incrementing = false;
     protected $fillable = ['name', 'content', 'status'];
@@ -24,15 +25,21 @@ class LetterFormat extends Model
             }
         });
     }
+=======
+    protected $fillable = ['name', 'content'];
+>>>>>>> 3e544c07ad744a462140f624dcff9c15f3812863
 
     // Relasi ke letters
     public function letters()
     {
         return $this->hasMany(Letter::class, 'letter_format_id');
     }
+<<<<<<< HEAD
 
     public function scopeActive($query)
     {
         return $query->whereNull('deleted_at');
     }
+=======
+>>>>>>> 3e544c07ad744a462140f624dcff9c15f3812863
 }

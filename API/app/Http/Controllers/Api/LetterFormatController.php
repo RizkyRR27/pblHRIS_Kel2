@@ -4,14 +4,18 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\LetterFormat;
+<<<<<<< HEAD
 use App\Http\Resources\LetterFormatResource;
 use App\Http\Resources\LetterFormatCollection;
 use Illuminate\Http\Request;
+=======
+>>>>>>> 3e544c07ad744a462140f624dcff9c15f3812863
 
 class LetterFormatController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
         $formats = LetterFormat::active()->paginate(10);
         return new LetterFormatCollection($formats);
     }
@@ -55,3 +59,13 @@ class LetterFormatController extends Controller
         return response()->json(['message' => 'deleted']);
     }
 }
+=======
+        $data = LetterFormat::all();
+
+        return response()->json([
+            'success' => true,
+            'data' => $data
+        ]);
+    }
+}
+>>>>>>> 3e544c07ad744a462140f624dcff9c15f3812863
